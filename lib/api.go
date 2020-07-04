@@ -7,7 +7,7 @@ import(
 )
 
 func home(w http.ResponseWriter, r *http.Request){
-	helpers.WriteResponse(w, "This is Home Page of e-panchayat" , http.StatusOK)
+	helpers.WriteResponse(w, "This is Home Page of E-panchayat" , http.StatusOK)
 	fmt.Printf("0")
 }
 
