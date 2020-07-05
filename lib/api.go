@@ -37,6 +37,18 @@ func login(w http.ResponseWriter, r *http.Request){
 	}
 
 }
+
+func admin(w http.ResponseWriter, r *http.Request){
+	var input Admin
+	json.NewDecoder(r.Body).Decode(&input)
+	if input.Id==88992233 && input.Password =="Panchayat@123"{
+		helpers.WriteResponse(w, "Admin login successfully" , http.StatusOK)
+	}else{
+		helpers.WriteResponse(w, "Check Id and Password" , http.StatusBadRequest)
+	}
+
+	}
+
 // func yoganas(w http.ResponseWriter, r *http.Request){
 
 // }

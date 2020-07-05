@@ -12,6 +12,7 @@ func Router() http.Handler {
 	//fmt.Printf("000")
 	router.HandleFunc("/signin", signin).Methods("POST")
 	router.HandleFunc("/login", login).Methods("POST")
+	router.HandleFunc("/admin", admin).Methods("POST")
 	// router.HandleFunc("/yoganas",yoganas).Methods("GET")
 	// router.HandleFunc("/rti",rti).Methods("GET")
 	router.Handle("/",router)

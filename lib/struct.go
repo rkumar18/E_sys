@@ -4,12 +4,12 @@ package lib
 var Postgres_config Postgres
 var Services_config Service
 
-// type Admin struct{
-// 	Username string
-// 	Email    string
-// 	Id       int
-// 	Password string
-// }
+type Admin struct{
+	Username string
+	Email    string
+	Id       int64
+	Password string
+}
 
 type Users struct{
 	Username string
