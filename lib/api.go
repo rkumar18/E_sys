@@ -11,11 +11,7 @@ func home(w http.ResponseWriter, r *http.Request){
 	helpers.WriteResponse(w, "This is Home Page of E-panchayat" , http.StatusOK)
 }
 
-func login(w http.ResponseWriter, r *http.Request){
-	var input Users 
-	json.NewDecoder(r.Body).Decode(&input)
 
-}
 
 func signin(w http.ResponseWriter, r *http.Request){
 	var input Users 
@@ -29,6 +25,18 @@ func signin(w http.ResponseWriter, r *http.Request){
 	}
 }
 
+
+func login(w http.ResponseWriter, r *http.Request){
+	var input Users 
+	json.NewDecoder(r.Body).Decode(&input)
+	result := dblogin(&input)
+	if result.Email==input.Email && result.Password==input.Password{
+		helpers.WriteResponse(w, "Login successfully" , http.StatusOK)
+	}else{
+		helpers.WriteResponse(w, "Check Password and email" , http.StatusBadRequest)
+	}
+
+}
 // func yoganas(w http.ResponseWriter, r *http.Request){
 
 // }

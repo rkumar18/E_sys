@@ -25,3 +25,11 @@ func dbsignin(input *Users)Users{
 	defer db.Close()
 	return result
 }
+
+func dblogin(input *Users)Users{
+	var result Users
+	db := DBConnection()
+	db.Where("Email=?",input.Email).Find(&result)
+	defer db.Close()
+	return result
+}
