@@ -4,8 +4,17 @@ package lib
 var Postgres_config Postgres
 var Services_config Service
 
-type PradhanData struct{
+type Admin struct{
 	Username string
+	Email    string
+	Id       int
+	Password string
+}
+
+type Users struct{
+	Username string
+	Email    string
+	Phoneno  int
 	Password string
 }
 
